@@ -2,7 +2,10 @@
 const nextConfig = {
   // Database drivers must run as plain Node modules, not be bundled.
   serverExternalPackages: ["@electric-sql/pglite", "pg"],
+  // Ship db/schema.sql with the serverless API functions (it is read at runtime).
+  outputFileTracingIncludes: { "/api/tasks/**": ["./db/schema.sql"] },
   poweredByHeader: false,
+  devIndicators: false,
   async headers() {
     return [
       {

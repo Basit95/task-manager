@@ -1,4 +1,5 @@
 import TaskApp from "@/components/TaskApp";
+import WeatherWidget from "@/components/WeatherWidget";
 
 export default function HomePage() {
   return (
@@ -8,8 +9,9 @@ export default function HomePage() {
         <p>Plan your day, track what is done.</p>
       </header>
 
-      <div className="layout">
+      <div className="layout layout--split">
         <TaskApp />
+        <WeatherWidget />
       </div>
 
       <footer className="page-footer">
